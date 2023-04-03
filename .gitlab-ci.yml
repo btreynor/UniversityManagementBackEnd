@@ -9,6 +9,9 @@ build:
   stage: build
   script:
     - mvn clean install
+  artifact:
+    paths:
+      - target/
 
 deploy:
   stage: deploy
