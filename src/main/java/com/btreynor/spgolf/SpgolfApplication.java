@@ -8,8 +8,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication
-@EntityScan(basePackages = {"com.btreynor.spgolf.model"})
-@EnableJpaRepositories(basePackages = {"com.btreynor.spgolf.repository"})
 public class SpgolfApplication  {
 
 	public static void main(String[] args) {

@@ -5,13 +5,12 @@ import com.btreynor.spgolf.model.University;
 
 import com.btreynor.spgolf.repository.UniversityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @CrossOrigin
-@Controller
+@RestController
 public class UniversityController {
 
     @Autowired

@@ -1,10 +1,11 @@
 package com.btreynor.spgolf.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Column;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "universities")
@@ -13,10 +14,15 @@ public class University {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column
     private String universityName;
+    @Column
     private String universityState;
+    @Column
     private String universityMascot;
+    @Column
     private String universityAddress;
+    @Column
     private String universityAcceptanceRate;
 
     public Long getId() {
