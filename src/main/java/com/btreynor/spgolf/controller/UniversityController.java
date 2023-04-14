@@ -5,12 +5,13 @@ import com.btreynor.spgolf.model.University;
 
 import com.btreynor.spgolf.repository.UniversityRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
-@CrossOrigin("*")
+@CrossOrigin
+@Controller
 public class UniversityController {
 
     @Autowired
@@ -26,7 +27,7 @@ public class UniversityController {
         return universityRepository.findAll();
     }
 
-    @GetMapping("university/{id}")
+    @GetMapping("/university/{id}")
     University getUniversityById(@PathVariable Long id) {
         return universityRepository.findById(id)
                 .orElseThrow(()-> new UniversityNotFoundException(id));
