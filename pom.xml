@@ -49,6 +49,46 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>*</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-webapp-maven-plugin</artifactId>
+				<version>0.1.5</version>
+				<configuration>
+					<authentication>
+						<serverId>azure-auth</serverId>
+					</authentication>
+					<region>East US</region>
+					<javaVersion>1.8</javaVersion>
+					<stopAppDuringDeployment>true</stopAppDuringDeployment>
+					<runtime>
+						<os>windows</os>
+						<javaVersion>1.8</javaVersion>
+						<webContainer>tomcat 8.5</webContainer>
+					</runtime>
+					<resources>
+						<resource>
+							<directory>${project.basedir}/target</directory>
+							<targetPath>/webapps</targetPath>
+							<includes>
+								<include>*.war</include>
+							</includes>
+						</resource>
+					</resources>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
